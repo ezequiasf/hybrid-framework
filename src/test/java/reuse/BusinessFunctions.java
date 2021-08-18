@@ -16,10 +16,14 @@ public class BusinessFunctions {
     }
 
     public void goToApplication () {
+        StartBrowser.childTest = StartBrowser.report.startTest("Goes to DemoQa Login Page");
+        StartBrowser.parentTest.appendChild(StartBrowser.childTest);
         aDriver.navigateToApplication("https://demoqa.com/login");
     }
 
     public void login () {
+        StartBrowser.childTest = StartBrowser.report.startTest("Login Actions");
+        StartBrowser.parentTest.appendChild(StartBrowser.childTest);
         aDriver.type(Login_Page.txtUser,"carlin");
         aDriver.type(Login_Page.txtPass,"Admin3212#");
         aDriver.click(Login_Page.btnLogin);
